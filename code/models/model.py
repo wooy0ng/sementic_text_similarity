@@ -14,7 +14,8 @@ class Model(pl.LightningModule):
 
         # 사용할 모델을 호출합니다.
         self.plm = transformers.AutoModelForSequenceClassification.from_pretrained(
-            pretrained_model_name_or_path=model_name, num_labels=1)
+            pretrained_model_name_or_path=model_name, num_labels=1
+        )
         # Loss 계산을 위해 사용될 L1Loss를 호출합니다.
         self.loss_func = torch.nn.L1Loss()
 

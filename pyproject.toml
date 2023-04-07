@@ -12,6 +12,7 @@ torch = "^2.0.0"
 pytorch-lightning = "^2.0.1"
 pandas = "^1.5.3"
 transformers = "^4.27.4"
+matplotlib = "^3.7.1"
 
 
 [build-system]
