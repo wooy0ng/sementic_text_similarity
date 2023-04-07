@@ -1,100 +1,50 @@
-# **level1 NLP 4조**
-## **[NLP] 문장 간 유사도 계산**
-
-복수의 문장에 대한 유사도를 수치로 제시하는 NLP Task입니다.
-
-정보 추출, QA 및 요악과 같은 NLP 문제에 널리 활용됩니다.
-
-실제 어플리케이션에서는 데이터 증강, 질문 제안, 중복 문장 탐지 등에 응용되고 있습니다.
-
-이번 Competition에서는 STS 데이터셋을 활용해 두 문장의 유사도를 측정하는 모델을 구성하는 것입니다.
+<div align="center">
+ <h1> 문장 간 유사도 계산 </h1>
+ <br>
+ 복수의 문장에 대한 유사도를 수치로 제시하는 NLP Task입니다.  <br />
+ <b>정보 추출, QA 및 요약</b>과 같은 NLP 문제에 널리 활용됩니다. <br />
+ 실제 어플리케이션에서는 <b>데이터 증강, 질문 제안, 중복 문장 탐지</b> 등에 응용됩니다.<br />
+<br>
+</div>
 
 <br><br><br>
 
-## **Contributors**
+## ✓ 활용 장비 및 환경
+- GPU : NVIDIA GeForce GTX 1650
+- OS : Ubuntu 20.04 LTS
 
-|이름|id|역할|
-|:--:|:--:|--|
-|이용우|[@wooy0ng](https://github.com/wooy0ng)|협업 리딩, 데이터 전처리, 데이터 후처리|
-|권현정|[@malinmalin2](https://github.com/malinmalin2)|데이터 전처리, 데이터 후처리|
-|강혜빈|[@hyeb](https://github.com/hyeb)|모델링 (모델 튜닝, 결과 분석)
-|백인진|[@eenzeenee](https://github.com/eenzeenee)|모델링 (모델 실험의 이론적 근거 마련)|
-|이준원|[@jun9603](https://github.com/jun9603)|모델링 (모델 튜닝, 결과 분석, 앙상블)
+<br><br>
 
+## ✓ 모델 구조
 
-<br><br><br>
+<img src="https://user-images.githubusercontent.com/37149278/230636506-2a06de2a-8d1e-4f09-9b02-9cb32964aa90.png" width="400">
 
+- 두 개의 sentence를 [SEP] special token으로 이어 붙인 후 얻은 input_ids를 모델의 input으로 사용합니다.
+- [CLS] token의 output hidden_state를 이용해 두 문장 간 유사도를 계산합니다. 
 
-## **Data**
+<br><br>
 
-기본 데이터
-- train set : 9,324개
-- validation set : 550개
-- evaluation set : 1,110개
+## ✓ 서비스 아키텍처
 
-✓ 평가 데이터의 50%는 public 점수 계산에 반영되어 실시간 리더보드에 표기된다.
+- 데이터 & 모델 학습 파이프라인
 
-✓ 나머지 50%는 private 점수 계산에 반영되어 대회 종료 후 평가된다. 
+<img src="https://user-images.githubusercontent.com/37149278/230636962-8c2645f1-06ff-4c12-ad68-8be6de4027e2.png" width="800">
 
+<br>
 
-<br><br><br>
+- inference
 
-
-## **Stacks**
-
-|idx|experiment|  
-|--|--|
-|1|scaling up (model)|
-|2|easy data augmentatiion(EDA)|
-|3|back translation|
-|4|bert mean pooling|
-|5|ensemble|
+<img width="800" src="https://user-images.githubusercontent.com/37149278/230637332-aba29832-6f66-4f0f-8787-f6f0eae1a6b6.png">
 
 
-<br><br><br>
+<br><br>
 
-## **project tree**
+## ✓ 사용 기술 스택
 
-```
-── README.md
-└── code
-    ├── inference.py
-    ├── requirements.txt
-    └── train.py
-```
+<img src="https://user-images.githubusercontent.com/37149278/230637496-2c17c358-f10c-46c3-b8a2-140ecf3f00f7.png" width="550">
 
-<br><br><br>
+<br><br>
 
-## **Train**
+자세한 정보 및 인사이트는 <a href="https://blog.naver.com/wooy0ng">wooy0ng의 기술 블로그</a>를 참고해주세요! 
 
-```
-$ python main.py --augment [value]
-```
-
-### **augment**
-- `--model_name` : huggingface model name (str)
-- `--batch_size` : batch_size (int)
-- `--max_epoch` : epoch_size (int)
-- `--shuffle` : shuffle dataset (bool)
-- `--learning_rate` : learning rate (float)
-- `--train_path` : train dataset's path (str)
-- `--dev_path` : validation dataset's path (str)
-- `--test_path` : evaluation dataset's path (str)
-- `--predict_path` : prediction dataset's path (str)
-
-<br><br><br>
-
-## **Inference**
-
-```
-$ python inference.py --augment [value]
-```
-
-### **augment**
-- `--model_name` : huggingface model name (str)
-- `--predict_path` : prediction dataset's path (str)
-
-
-<br><br><br>
-
-
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fwooy0ng%2Fhit-counter&count_bg=%23ADC83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
