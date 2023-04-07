@@ -1,5 +1,7 @@
 <div align="center">
  <h1> 문장 간 유사도 계산 </h1>
+<img src=" https://user-images.githubusercontent.com/37149278/230638742-f28eaaa3-6ebd-4c79-b63c-8a45e54f46c8.PNG" width="750">
+
  <br>
  복수의 문장에 대한 유사도를 수치로 제시하는 NLP Task입니다.  <br />
  <b>정보 추출, QA 및 요약</b>과 같은 NLP 문제에 널리 활용됩니다. <br />
