@@ -43,7 +43,7 @@
 
 ## ✓ 사용 기술 스택
 
-<img src="https://user-images.githubusercontent.com/37149278/230637496-2c17c358-f10c-46c3-b8a2-140ecf3f00f7.png" width="550">
+<img src="https://user-images.githubusercontent.com/37149278/236676117-a352c571-90cc-426d-9ae2-b5768127459d.png" width="550">
 
 <br><br>
 
